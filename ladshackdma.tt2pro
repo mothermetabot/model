@@ -1,0 +1,47 @@
+###########################
+# UaModeler Project File  #
+# Generated at 25.03.2023 #
+###########################
+
+PROJECTNAME = LadshackDma
+
+TEMPLATESET = ($TEMPLATES)/net/v3_2/t0/net_server.tt2set
+
+MODELS += ($MODELS)/Opc.Ua.NodeSet2.ua \
+    ($MODELS)/Opc.Ua.Di.NodeSet2.ua \
+    ../../nodesets-public/Opc.Ua.AMB.NodeSet2.ua \
+    ../../nodesets-public/Opc.Ua.Machinery.NodeSet2.ua \
+    ../../nodesets-public/lads.ua \
+    ../../nodesets-public/DynamicMechanicalAnalyzer.ua
+
+VARIABLES+= ($MODELS)/Opc.Ua.Di.NodeSet2.ua: Namespace=UaBase; Organization=UnifiedAutomation; \
+    ../../nodesets-public/Opc.Ua.AMB.NodeSet2.ua: Namespace=UaBase; Organization=UnifiedAutomation; \
+    ../../nodesets-public/Opc.Ua.Machinery.NodeSet2.ua: Namespace=UaBase; Organization=UnifiedAutomation; \
+    ../../nodesets-public/lads.ua: Namespace=Lads; Organization=UnifiedAutomation; \
+    ../../nodesets-public/DynamicMechanicalAnalyzer.ua: Namespace=Dma; Organization=Netzsch; 
+
+COLORS = ($MODELS)/Opc.Ua.NodeSet2.ua: #0000ff\
+    ($MODELS)/Opc.Ua.Di.NodeSet2.ua: #0000ff\
+    ../../nodesets-public/Opc.Ua.AMB.NodeSet2.ua: #0000ff\
+    ../../nodesets-public/Opc.Ua.Machinery.NodeSet2.ua: #0000ff\
+    ../../nodesets-public/lads.ua: #0000ff\
+    ../../nodesets-public/DynamicMechanicalAnalyzer.ua: #0000ff
+
+PROJECTVARIABLES += GenerateDefaultApplication = false \
+    GeneratePackagesConfig = false \
+    NetFramework = net6 \
+    ProjectNamespace = LadshackDma \
+    ProjectOrganization = Netzsch
+
+OUTPUTPATH = ../temp
+
+GENERATE += ../../nodesets-public/lads.ua
+
+LOCKEDMODELS += ($MODELS)/Opc.Ua.Di.NodeSet2.ua
+
+NODEACCESSINFOROLES += Administrator \
+    SecurityAdmin \
+    ConfigurationAdmin \
+    Operator \
+    Observer
+
