@@ -27,15 +27,18 @@ COLORS = ($MODELS)/Opc.Ua.NodeSet2.ua: #0000ff\
     ../../nodesets-public/lads.ua: #0000ff\
     ../../nodesets-public/DynamicMechanicalAnalyzer.ua: #0000ff
 
-PROJECTVARIABLES += GenerateDefaultApplication = false \
-    GeneratePackagesConfig = false \
+PROJECTVARIABLES += GenerateDefaultApplication = true \
+    GeneratePackagesConfig = true \
     NetFramework = net6 \
     ProjectNamespace = LadshackDma \
     ProjectOrganization = Netzsch
 
-OUTPUTPATH = ../temp
+OUTPUTPATH = generated
 
-GENERATE += ../../nodesets-public/lads.ua
+GENERATE += ../../nodesets-public/Opc.Ua.AMB.NodeSet2.ua \
+    ../../nodesets-public/Opc.Ua.Machinery.NodeSet2.ua \
+    ../../nodesets-public/lads.ua \
+    ../../nodesets-public/DynamicMechanicalAnalyzer.ua
 
 LOCKEDMODELS += ($MODELS)/Opc.Ua.Di.NodeSet2.ua
 

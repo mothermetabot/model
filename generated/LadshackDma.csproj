@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0; net6.0-windows</TargetFrameworks>
+    <AssemblyName>Netzsch.LadshackDma</AssemblyName>
+    <RootNamespace>Netzsch.LadshackDma</RootNamespace>
+    <Copyright>Copyright (c) Unified Automation GmbH 2011-2023</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Opc.Ua.AMB.NodeSet2.xml" />
+    <EmbeddedResource Include="Opc.Ua.Machinery.NodeSet2.xml" />
+    <EmbeddedResource Include="lads.xml" />
+    <EmbeddedResource Include="DynamicMechanicalAnalyzer.xml" />
+  </ItemGroup>
+
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <PackageReference Include="UnifiedAutomation.UaBase" Version="" />
+    <PackageReference Include="UnifiedAutomation.UaBase.BouncyCastle" Version="" />
+    <PackageReference Include="UnifiedAutomation.UaServer" Version="" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0-windows' ">
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+    <PackageReference Include="UnifiedAutomation.UaBase" Version="" />
+    <PackageReference Include="UnifiedAutomation.UaBase.Windows" Version="" />
+    <PackageReference Include="UnifiedAutomation.UaServer" Version="" />
+  </ItemGroup>
+
+</Project>
